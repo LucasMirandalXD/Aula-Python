@@ -49,6 +49,7 @@ formato = 'a={} b={} c={:.2f}' .format(a, b, c)
 print(formato)
 """
 #teste
+"""
 Vetor1 = []
 Vetor2 = []
 Soma = []
@@ -62,3 +63,32 @@ for i in range(3):
 for i in range(3):
     soma = soma+Soma[i]
     print(soma)
+"""
+""" 
+#format com indice
+a = 'A'
+b = 'B'
+c = 14.2
+formato = 'a={0} a={0} b={1} c={2:.2f}' .format(a, b, c)
+
+print(formato)
+
+"""
+"""
+#parametro nomeado
+a = 'A'
+b = 'B'
+c = 14.2
+string = 'a={0} a={0} b={1} c={nome3:.2f}'
+#tudo que vier depois de um parametro nomeado precisa tambem ser um parametro nomeado
+formato =  string.format(
+    a, b, nome3=c)
+
+print(formato)
+"""
+nome = input('qual seu nome:')
+n1 = float(input('seu peso: '))
+n2 = float(input('altura: '))
+imc = n1 / (n2 * n2)
+agua = n1 * 0.035
+print(f'olá {nome} tudo bem? o seu IMC é {imc:.2f} e voce precisa beber {agua:.2f}L por dia.')
