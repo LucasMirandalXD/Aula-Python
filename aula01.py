@@ -86,9 +86,62 @@ formato =  string.format(
 
 print(formato)
 """
+"""
 nome = input('qual seu nome:')
 n1 = float(input('seu peso: '))
 n2 = float(input('altura: '))
 imc = n1 / (n2 * n2)
 agua = n1 * 0.035
 print(f'olá {nome} tudo bem? o seu IMC é {imc:.2f} e voce precisa beber {agua:.2f}L por dia.')
+"""
+"""
+#codigo copiado para estudar
+import healthtools
+
+def calcular_imc(nome, peso, altura):
+    
+    Calcula o IMC e a quantidade diária recomendada de água para beber com base no peso e altura do usuário.
+    
+    if peso <= 0 or altura <= 0:
+        raise ValueError("O peso e a altura devem ser maiores que zero.")
+    
+    imc = healthtools.BmiCalculator().calculate(peso, altura)
+    agua_recomendada = peso * 0.035
+    
+    mensagem = f"Olá {nome}, seu IMC é {imc:.2f} e você precisa beber {agua_recomendada:.2f} L de água por dia."
+    return mensagem
+
+nome = input("Qual é o seu nome? ")
+peso = float(input("Qual é o seu peso em kg? "))
+altura = float(input("Qual é a sua altura em metros? "))
+
+try:
+    mensagem = calcular_imc(nome, peso, altura)
+    print(mensagem)
+except ValueError as error:
+    print(f"Erro: {error}")
+"""
+"""
+def calcular_imc(nome, peso, altura):
+    
+    #Calcula o IMC e a quantidade diária recomendada de água para beber com base no peso e altura do usuário.
+  
+    if peso <= 0 or altura <= 0:
+        raise ValueError("O peso e a altura devem ser maiores que zero.")
+    
+    imc = peso / (altura * altura)
+    agua_recomendada = peso * 0.035
+    
+    mensagem = f"Olá {nome}, seu IMC é {imc:.2f} e você precisa beber {agua_recomendada:.2f} L de água por dia."
+    return mensagem
+
+nome = input("Qual é o seu nome? ")
+peso = float(input("Qual é o seu peso em kg? "))
+altura = float(input("Qual é a sua altura em metros? "))
+
+try:
+    mensagem = calcular_imc(nome, peso, altura)
+    print(mensagem)
+except ValueError as error:
+    print(f"Erro: {error}")
+  """
